@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="hikashop" method="upgrade">
+	<name>PLG_SYNHIKASHOPWITHMENU</name>
+	<creationDate>17.11.2019</creationDate>
+	<author>Dmitry Tsymbal</author>
+	<authorEmail>cymbal@delo-design.ru</authorEmail>
+	<authorUrl>https://delo-design.ru</authorUrl>
+	<copyright>Copyright © 2019 Delo Design. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<description>PLG_SYNHIKASHOPWITHMENU_XML_DESCRIPTION</description>
+
+	<scriptfile>script.php</scriptfile>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_hikashop_synhikashopwithmenu.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_hikashop_synhikashopwithmenu.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_hikashop_synhikashopwithmenu.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_hikashop_synhikashopwithmenu.sys.ini</language>
+	</languages>
+
+	<files>
+		<filename plugin="synhikashopwithmenu">synhikashopwithmenu.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field
+						name="typeinit"
+						type="list"
+						default="menu"
+						label="PLG_SYNHIKASHOPWITHMENU_CONFIG_TYPEINIT"
+						description=""
+				>
+					<option value="menu">PLG_SYNHIKASHOPWITHMENU_CONFIG_TYPEINIT_OPTION_MENU</option>
+				</field>
+
+				<field
+						name="syncmenu"
+						type="menu"
+						default="mainmenu"
+						label="PLG_SYNHIKASHOPWITHMENU_CONFIG_SYNCMENU"
+						showon="typeinit:menu"
+				/>
+
+				<field
+						name="syncmenuitem"
+						type="menuitem"
+						label="PLG_SYNHIKASHOPWITHMENU_CONFIG_SYNCMENUITEM"
+						showon="typeinit:menuitem"
+				/>
+
+				<field
+						name="samplemenuitem"
+						type="menuitem"
+						default="45"
+						label="PLG_SYNHIKASHOPWITHMENU_CONFIG_SAMPLEITEMENU"
+				/>
+
+				<field
+						name="autourls"
+						type="radio"
+						default="0"
+						label="PLG_SYNHIKASHOPWITHMENU_CONFIG_AUTOURLS"
+						class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
