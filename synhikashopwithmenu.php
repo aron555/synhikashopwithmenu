@@ -295,6 +295,9 @@ class plgHikashopSynhikashopwithmenu extends CMSPlugin
 		$categoryClassHikashop = hikashop_get('class.category');
 		$categoryItems = $categoryClassHikashop->getList();
 
+		//TODO вынести в настройки плагина, генерировать ли производителя в меню
+		$categoryItems = array_merge($categoryItems, $categoryClassHikashop->getList('manufacturer'));
+
 		//подготавливаем дерево пунктов меню для синхронизации
 		foreach ($menuItemsSource as $menuItemSource)
 		{
